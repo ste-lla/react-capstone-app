@@ -10,7 +10,7 @@ let Login = (props) => {
   //const history = useHistory();
 
   let _verifyLogin = (user_email, user_password) => {
-    fetch('http://localhost:3001/api/login', {
+    fetch('https://express-capstone-app.herokuapp.com/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
