@@ -14,7 +14,8 @@ const Login = (props) => {
   let _verifyLogin = (user_email, user_password) => {
     
     //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/login
-    fetch('http://localhost:3001/api/login', {
+    //Production: http://localhost:3001/api/login
+    fetch('https://express-capstone-app.herokuapp.com/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

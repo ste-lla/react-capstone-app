@@ -20,8 +20,9 @@ const ResetPw = () => {
       setPwField('');         //Resets pw input field
       setConfirmPwField('');  //Resets confirm_pw input field
 
-
-      fetch('http://localhost:3001/api/resetPassword', {
+      //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/resetPassword
+      //Production: http://localhost:3001/api/resetPassword
+      fetch('https://express-capstone-app.herokuapp.com/api/resetPassword', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
