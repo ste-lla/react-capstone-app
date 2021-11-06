@@ -30,13 +30,17 @@ function App() {
             <Register />
           </Route> : ''}
 
+
+
          {/*  {loggedIn ? <Route path="/user" component={UserPage} /> : ''} */}
 
           {loggedIn ? <Route path="/user">
             <UserPage setLoggedIn={setLoggedIn} /> 
           </Route> : ''}
 
-          {!loggedIn ? <Route path="/resetPassword" component={ResetPw} /> : ''}
+
+    
+          <Route path="/resetPassword" component={ResetPw} />
 
           <Route path="/terms" component={Terms} />
          
