@@ -15,7 +15,7 @@ const Login = (props) => {
     
     //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/login
     //Production: http://localhost:3001/api/login
-    fetch('https://express-capstone-app.herokuapp.com/api/login', {
+    fetch('http://localhost:3001/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -61,14 +61,14 @@ const Login = (props) => {
             <Col xs={10} sm={6} md={4}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter Email" />
+                    <Form.Control required type="email" name="email" placeholder="Enter Email" />
                 </Form.Group>
             </Col>
 
             <Col xs={10} sm={6} md={4}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Enter Password" />
+                    <Form.Control required type="password" name="password" placeholder="Enter Password" />
                 </Form.Group>
             </Col>
 
