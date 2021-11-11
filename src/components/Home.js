@@ -4,25 +4,33 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-//import ListGroupItem from 'react-bootstrap/ListGroup';
+import Spinner from 'react-bootstrap/Spinner';
+import { format, parseISO } from 'date-fns'
 import {useState} from "react";
 
 const Home = () => {
     const [eventData, setEventData] = useState([]);
     const [error, setError] = useState('');
     const [fieldRequired, setFieldRequired] = useState('');
+    const [searchSuccess, setSearchSuccess] = useState('');
+    const [loadingMsg, setLoadingMsg] = useState('');
 
-    
+
     let _handleSearchEvents = (e) => {
         if (e.target.date.value === "none" || e.target.distance.value === "none" || e.target.location.value === "" ) {
             e.preventDefault();
             setEventData([]);
+            setError('');
+            setSearchSuccess('');
+            setLoadingMsg('');
             setFieldRequired('Please complete all fields in the form before submitting.')
 
         } else {
+            e.preventDefault();
             setError('');
             setFieldRequired('');
-            e.preventDefault();
+            setSearchSuccess(" ");
+            setLoadingMsg(<Spinner animation="border" variant="warning" />);
 
             //const API_KEY = process.env.TICKETMASTER_API_KEY; //Throws CORS error when used in URL
 
@@ -51,10 +59,13 @@ const Home = () => {
                 .then(res => res.json())
                 .then((data) => {
                     setEventData(data._embedded.events);
+                    setLoadingMsg('');
+                    setSearchSuccess("Here's What's Happening Today...");
                     //console.log(data);
                 })
                 .catch(err => {
                     console.log(err);
+                    setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })
             } else {
@@ -63,10 +74,13 @@ const Home = () => {
                 .then(res => res.json())
                 .then((data) => {
                     setEventData(data._embedded.events);
+                    setLoadingMsg('');
+                    setSearchSuccess("Here's What's Happening Over the Next Couple of Months...");
                     //console.log(data);
                 })
                 .catch(err => {
                     console.log(err);
+                    setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })
             }
@@ -75,7 +89,36 @@ const Home = () => {
 
 
     let eventsReturned = eventData.map((theEvent, index) => {
-        //console.log(theEvent);
+        //Use date-fns to rtn date as --> DayOfWeek Mon Day, Year
+        let dateReturned = theEvent.dates.start.localDate;
+        let parsedISO = parseISO(dateReturned);
+        let formattedDate = format(parsedISO, 'EEE MMM d, yyyy');
+        
+        //Manipulate time from military to standard and add AM/PM
+        let timeReturned = `${theEvent.dates.start.localTime}`;
+        let splitTime = timeReturned.split(':');
+        let hour = splitTime[0];
+        let minute = splitTime[1];
+        let timeOfDay = ''
+       
+        if(hour < 12) {
+            timeOfDay = "AM";
+        } else if (hour === 12) {
+            timeOfDay = "PM";
+        } else if (hour > 12) {
+            hour = hour - 12
+            timeOfDay = "PM";
+        }
+       
+        let timeOfEvent = `${hour}:${minute} ${timeOfDay}`;
+
+        if(theEvent.dates.start.localTime === undefined) {
+            timeOfEvent = 'N/A';
+        }
+
+        //console.log(theEvent.dates.start.localTime);
+
+        
         return(
             <Col key={index}>
                 <Card style={{ width: '18rem', marginTop: '2.5em' }}>
@@ -83,8 +126,9 @@ const Home = () => {
                     <Card.Body>
                         <Card.Title>{theEvent.name}</Card.Title>
                         <div>
-                            <div>Start Date <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {theEvent.dates.start.localDate}</div>
-                            <div>Start Time <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {theEvent.dates.start.localTime}</div>  
+                            {/* <div>Start Date <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {theEvent.dates.start.localDate}</div> */}
+                            <div>Start Date <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {formattedDate}</div>
+                            <div>Start Time <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {timeOfEvent}</div>  
                         </div>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
@@ -141,6 +185,10 @@ const Home = () => {
                     </Col>
                 </Row>
             </Form>
+
+            <Row className="d-flex justify-content-center mt-4">
+                {loadingMsg} {searchSuccess}
+            </Row>
 
             <Row>
                 {eventsReturned}
