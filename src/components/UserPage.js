@@ -8,13 +8,12 @@ import Spinner from 'react-bootstrap/Spinner';
 import { format, parseISO } from 'date-fns'
 import {useState} from "react";
 
-const UserPage = (props) => {
+const UserPage = () => {
     const [eventData, setEventData] = useState([]);
     const [error, setError] = useState('');
     const [fieldRequired, setFieldRequired] = useState('');
     const [searchSuccess, setSearchSuccess] = useState('');
     const [loadingMsg, setLoadingMsg] = useState('');
-    //const [savedEvent, setSavedEvent] = useState('');
 
     let x = 0;
 
@@ -34,7 +33,7 @@ const UserPage = (props) => {
             setSearchSuccess('');
             setEventData([]);
             setLoadingMsg(<Spinner animation="border" variant="warning" />);
-
+            
             //const API_KEY = process.env.TICKETMASTER_API_KEY; //Throws CORS error when used in URL
 
             let location = e.target.location.value;
@@ -57,7 +56,7 @@ const UserPage = (props) => {
             //console.log(todaysDate.getMonth());   //returns 1. Why not 10 ??
             
             if(date === "today") {
-                let URLToday = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${tomorrowEndDate}&apikey=OadepjXIEYGnZB6tZOtREAmuSNLyyc3e`;
+                let URLToday = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${tomorrowEndDate}&apikey=98GrK7V2lpAHAgbgXe0ijd5SoGK3aYoT`;
                 fetch(URLToday)
                 .then(res => res.json())
                 .then((data) => {
@@ -72,7 +71,7 @@ const UserPage = (props) => {
                     setError('You have entered an invalid City, State. Please try again')
                 })
             } else {
-                let URLFuture = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${futureDateISO}T23:59:59Z&apikey=OadepjXIEYGnZB6tZOtREAmuSNLyyc3e`;
+                let URLFuture = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${futureDateISO}T23:59:59Z&apikey=98GrK7V2lpAHAgbgXe0ijd5SoGK3aYoT`;
                 fetch(URLFuture)
                 .then(res => res.json())
                 .then((data) => {
@@ -90,8 +89,6 @@ const UserPage = (props) => {
         }
     }
 
-
-    
 
 
     let eventsReturned = eventData.map((theEvent, index) => {
@@ -123,13 +120,12 @@ const UserPage = (props) => {
         }
 
         
-    
         let _AddToInterested = (e) => {
             x += 1;
-            console.log(x);
-
+            
             let cardBody = e.target.parentElement.parentElement;
             let eventInfo = {
+                id: x,
                 img: cardBody.querySelector('.cardImg').src,
                 name: cardBody.querySelector('.eventName').textContent,
                 date: cardBody.querySelector('.startDate').textContent,
@@ -138,23 +134,13 @@ const UserPage = (props) => {
 
             localStorage.setItem(`savedEvent${x}`, JSON.stringify(eventInfo));
             
-            //let retrieveDetails = JSON.parse(localStorage.getItem(`savedEvent${x}`));
-            //console.log(retrieveDetails.test1);
-
-
             //Add msg when user saves and event
-            //setSavedEvent("Event Saved to 'Interested' List!");
             cardBody.querySelector('.savedMsg').textContent = "Event Saved to 'Interested' List!";
 
             //Makes the text disappear after 2.5 sec
             setTimeout(function() {
                 cardBody.querySelector('.savedMsg').textContent = '';
             }, 2500);
-
-            //console.log(eventInfo.img);
-            //console.log(eventInfo.name);
-            //console.log(eventInfo.date);
-            //console.log(eventInfo.url);
         }
 
 
@@ -186,7 +172,6 @@ const UserPage = (props) => {
                     </Card.Body>   
                 </Card>
             </Col>
-
         )
 })
 

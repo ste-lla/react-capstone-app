@@ -32,6 +32,11 @@ const Home = () => {
             setSearchSuccess('');
             setEventData([]);
             setLoadingMsg(<Spinner animation="border" variant="warning" />);
+            
+
+            localStorage.setItem('lastLocationSearched', e.target.location.value )
+            //let lastSearch = localStorage.getItem('lastLocationSearched');
+            //console.log(lastSearch);
 
             //const API_KEY = process.env.TICKETMASTER_API_KEY; //Throws CORS error when used in URL
 
@@ -39,13 +44,14 @@ const Home = () => {
             let distance = e.target.distance.value;
             let date = e.target.date.value;
             
+            
             //Splits the ISO date at the "." --> takes 1st index (contains date w/o millisec) --> add the "Z" back to the string
             const todaysDate = new Date();
             let todaysDateISO = todaysDate.toISOString().split('.')[0]+"Z";
             
             //.getDate() returns day of the month (1-31) of a date 
             //.setDate() sets the day of the month of a date object.
-            var currentDate = new Date();
+            let currentDate = new Date();
             currentDate.setDate(currentDate.getDate() + 1);
             let tomorrowEndDate = currentDate.toISOString().split('.')[0]+"Z";
           
@@ -55,7 +61,7 @@ const Home = () => {
             //console.log(todaysDate.getMonth());   //returns 1. Why not 10 ??
             
             if(date === "today") {
-                let URLToday = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${tomorrowEndDate}&apikey=OadepjXIEYGnZB6tZOtREAmuSNLyyc3e`;
+                let URLToday = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${tomorrowEndDate}&apikey=98GrK7V2lpAHAgbgXe0ijd5SoGK3aYoT`;
                 fetch(URLToday)
                 .then(res => res.json())
                 .then((data) => {
@@ -70,7 +76,7 @@ const Home = () => {
                     setError('You have entered an invalid City, State. Please try again')
                 })
             } else {
-                let URLFuture = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${futureDateISO}T23:59:59Z&apikey=OadepjXIEYGnZB6tZOtREAmuSNLyyc3e`;
+                let URLFuture = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=${location}&radius=${distance}&unit=miles&size=198&sort=date,asc&startDateTime=${todaysDateISO}&endDateTime=${futureDateISO}T23:59:59Z&apikey=98GrK7V2lpAHAgbgXe0ijd5SoGK3aYoT`;
                 fetch(URLFuture)
                 .then(res => res.json())
                 .then((data) => {

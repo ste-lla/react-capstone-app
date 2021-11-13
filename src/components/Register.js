@@ -89,10 +89,10 @@ const Register = () => {
                 </Col>
             </Row>
 
-            <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
+            {/* <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
                 <Form.Check required className="me-2" type="checkbox" name="termsConditions" />
                 <Form.Label>Agree to <a href="/terms" target="_blank">Terms and Conditions</a></Form.Label>
-            </Form.Group>
+            </Form.Group> */}
 
             <Button variant="primary" type="submit">Register!</Button>
             

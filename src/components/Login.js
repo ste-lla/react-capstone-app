@@ -45,12 +45,6 @@ const Login = (props) => {
     _verifyLogin(e.target.email.value, e.target.password.value)
   }
 
- /*  if(){
-      return(
-          <Redirect to="/user" />
-      )
-  } */
-
   return (
     <div>
 

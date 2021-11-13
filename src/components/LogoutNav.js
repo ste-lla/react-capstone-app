@@ -2,7 +2,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 
 const Navigation = (props) => {
-    //const setLoggedIn = props.setLoggedIn;
 
     function _handleLogout() {
         props.setLoggedIn(false);
