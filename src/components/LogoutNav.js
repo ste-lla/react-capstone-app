@@ -5,7 +5,8 @@ const Navigation = (props) => {
     //const setLoggedIn = props.setLoggedIn;
 
     function _handleLogout() {
-        props.setLoggedIn(false)
+        props.setLoggedIn(false);
+        localStorage.removeItem('userName');
     } 
 
     return(
@@ -19,6 +20,9 @@ const Navigation = (props) => {
                     <Nav className="ms-auto"> {/* Moves links to right side of navbar */}
                         <LinkContainer to="/user">
                             <Nav.Link>My Profile Page</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/interested">
+                            <Nav.Link>'Interested' List</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/logout">
                             <Nav.Link onClick={_handleLogout}>Logout</Nav.Link>

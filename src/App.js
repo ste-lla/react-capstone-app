@@ -9,6 +9,7 @@ import Register from './components/Register';
 import Terms from './components/Terms'; 
 import Home from './components/Home'; 
 import UserPage from './components/UserPage'; 
+import Interested from './components/Interested'; 
 import { useState } from 'react';
 
 function App() {
@@ -39,7 +40,11 @@ function App() {
           </Route> : ''}
 
 
-    
+
+          {loggedIn ? <Route path="/interested">
+            <Interested />
+          </Route> : ''}
+
           <Route path="/resetPassword" component={ResetPw} />
 
           <Route path="/terms" component={Terms} />

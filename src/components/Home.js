@@ -29,7 +29,8 @@ const Home = () => {
             e.preventDefault();
             setError('');
             setFieldRequired('');
-            setSearchSuccess(" ");
+            setSearchSuccess('');
+            setEventData([]);
             setLoadingMsg(<Spinner animation="border" variant="warning" />);
 
             //const API_KEY = process.env.TICKETMASTER_API_KEY; //Throws CORS error when used in URL
@@ -75,7 +76,7 @@ const Home = () => {
                 .then((data) => {
                     setEventData(data._embedded.events);
                     setLoadingMsg('');
-                    setSearchSuccess("Here's What's Happening Over the Next Couple of Months...");
+                    setSearchSuccess("Here's What's Coming Up...");
                     //console.log(data);
                 })
                 .catch(err => {
@@ -116,8 +117,6 @@ const Home = () => {
             timeOfEvent = 'N/A';
         }
 
-        //console.log(theEvent.dates.start.localTime);
-
         
         return(
             <Col key={index}>
@@ -126,7 +125,6 @@ const Home = () => {
                     <Card.Body>
                         <Card.Title>{theEvent.name}</Card.Title>
                         <div>
-                            {/* <div>Start Date <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {theEvent.dates.start.localDate}</div> */}
                             <div>Start Date <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {formattedDate}</div>
                             <div>Start Time <span style={{fontSize: "1.5em"}}>&#x0223E;</span> {timeOfEvent}</div>  
                         </div>
@@ -137,7 +135,6 @@ const Home = () => {
                             <div>{theEvent._embedded.venues[0].address.line1}</div> 
                             <div>{theEvent._embedded.venues[0].city.name}, {theEvent._embedded.venues[0].state.stateCode} {theEvent._embedded.venues[0].postalCode} </div> 
                         </ListGroup.Item>
-                        {/* <ListGroup.Item>Lorem</ListGroup.Item> */}
                     </ListGroup>
                     <Card.Body>
                         <Card.Link href={theEvent.url} target="_blank">Buy Tickets</Card.Link>

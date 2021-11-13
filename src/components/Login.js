@@ -9,8 +9,9 @@ import { Col } from 'react-bootstrap';
 const Login = (props) => {
   const setLoggedIn = props.setLoggedIn;
   const history = useHistory();
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
   
+
   let _verifyLogin = (user_email, user_password) => {
     
     //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/login
@@ -30,10 +31,8 @@ const Login = (props) => {
       //console.log(data);
       if (data.login) {             //See myNotes.js file for explanation of this line
         setLoggedIn(data.user);     //Blue word data is from .then(data) on/around line 26. .user is from the white word (user) in server.js file from res.json() I set upon a successful login
-        //setLoggedIn(true); 
-        //console.log(data.user.fname);
-        //localStorage.setItem("userFirstName", data.user.fname);
-        history.push("/user") //This redirects the user to the userPage component
+        localStorage.setItem('userName', data.user.fname);
+        history.push('/user'); 
     } else {
         setError(data.message);
         console.log(setLoggedIn);
