@@ -10,12 +10,12 @@ const Interested = () => {
     //let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     let x = [1, 2, 3, 4, 5, 6];
     
-    let displaySavedEvents = x.map((num) => {
+    let displaySavedEvents = x.map((num, index) => {
         let savedEvent = JSON.parse(localStorage.getItem(`savedEvent${num}`));
         //console.log(savedEvent);
         if(savedEvent !== null) {
             return(
-                <Col>
+                <Col key={index}>
                     <Card style={{ width: '18rem', marginTop: '2.5em' }}>
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>

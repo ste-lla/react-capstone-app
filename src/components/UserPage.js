@@ -14,7 +14,7 @@ const UserPage = (props) => {
     const [fieldRequired, setFieldRequired] = useState('');
     const [searchSuccess, setSearchSuccess] = useState('');
     const [loadingMsg, setLoadingMsg] = useState('');
-    const [savedEvent, setSavedEvent] = useState('');
+    //const [savedEvent, setSavedEvent] = useState('');
 
     let x = 0;
 
@@ -123,9 +123,7 @@ const UserPage = (props) => {
         }
 
         
-
-
-        
+    
         let _AddToInterested = (e) => {
             x += 1;
             console.log(x);
@@ -145,8 +143,8 @@ const UserPage = (props) => {
 
 
             //Add msg when user saves and event
-            setSavedEvent("Event Saved to 'Interested' List!");
-            cardBody.querySelector('.savedMsg').textContent = savedEvent;
+            //setSavedEvent("Event Saved to 'Interested' List!");
+            cardBody.querySelector('.savedMsg').textContent = "Event Saved to 'Interested' List!";
 
             //Makes the text disappear after 2.5 sec
             setTimeout(function() {
