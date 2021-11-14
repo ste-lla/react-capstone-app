@@ -1,0 +1,48 @@
+
+/* HOME.JS */
+
+   /*  .homeMainContainer{
+        
+    } */
+
+    .homeGreeting {
+        display: flex;
+        justify-content: center; 
+        margin-top: 2.5em;
+        font-size: 4em;
+        
+        animation-name: rainbow;
+        animation-duration: 8s;   
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes rainbow {
+        0% {color: red;}
+        25% {color: yellow;}
+        50% {color: orange;}
+        75% {color: blue;}
+        100% {color: green;}
+       }
+
+     
+   
+  
+
+
+
+       /* HOME.JS */
+
+       /* Keeps 'Entertain Me' margin-top aligned properly at diff breakpoints */
+            @media screen and (min-width: 360px) 
+                { 
+                    .homeGreeting {
+                        margin-top: 1em; 
+                    }
+                }
+
+                @media screen and (min-width: 768px) 
+                { 
+                    .homeGreeting {
+                        margin-top: 2.5em; 
+                    }
+                }

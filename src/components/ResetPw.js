@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 
 const ResetPw = () => {
@@ -10,7 +11,7 @@ const ResetPw = () => {
     const [emailField, setEmailField] = useState('');
     const [pwField, setPwField] = useState('');
     const [confirmPwField, setConfirmPwField] = useState('');
-    
+    const history = useHistory();
   
     let _handleReset = (e) => {
       e.preventDefault();
@@ -37,6 +38,7 @@ const ResetPw = () => {
       .then((data) => {
         if (data.resetPW) {   
           setResetError(data.message);
+          history.push('/login')
         } else {
           setResetError(data.message);
         }

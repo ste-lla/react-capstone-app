@@ -1,3 +1,4 @@
+import './Styles.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +15,7 @@ const Home = () => {
     const [fieldRequired, setFieldRequired] = useState('');
     const [searchSuccess, setSearchSuccess] = useState('');
     const [loadingMsg, setLoadingMsg] = useState('');
-
+    const[greeting, setGreeting] = useState('Entertain Me!');
 
     let _handleSearchEvents = (e) => {
         if (e.target.date.value === "none" || e.target.distance.value === "none" || e.target.location.value === "" ) {
@@ -23,7 +24,9 @@ const Home = () => {
             setError('');
             setSearchSuccess('');
             setLoadingMsg('');
+            setGreeting('');
             setFieldRequired('Please complete all fields in the form before submitting.')
+            
 
         } else {
             e.preventDefault();
@@ -31,9 +34,10 @@ const Home = () => {
             setFieldRequired('');
             setSearchSuccess('');
             setEventData([]);
+            setGreeting('');
             setLoadingMsg(<Spinner animation="border" variant="warning" />);
-            
 
+            
             localStorage.setItem('lastLocationSearched', e.target.location.value )
             //let lastSearch = localStorage.getItem('lastLocationSearched');
             //console.log(lastSearch);
@@ -154,7 +158,7 @@ const Home = () => {
 
   
     return(
-        <div>
+        <div className="homeMainContainer">
 
             <Form onSubmit={_handleSearchEvents}>
                 <Row>
@@ -204,6 +208,10 @@ const Home = () => {
             <Row className="d-flex justify-content-center mt-1">
                 {fieldRequired}
             </Row>
+
+            <div id="myHomeGreeting" className="homeGreeting">{greeting}</div>  
+
+            {/* <Row className="d-flex justify-content-center align-items-center">Entertain Me!</Row> */}
 
         </div>
     )
