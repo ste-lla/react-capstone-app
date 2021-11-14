@@ -40,6 +40,17 @@
         color: whitesmoke;
     }
 
+    .alertUserMsg {
+        background:rgba(104, 102, 103, 0.55);
+        font-size: 1.4em;
+        font-weight: bold;
+        color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+
+
   /*   .border-gradient {
         border: 10px solid;
         border-image-slice: 1;
@@ -61,7 +72,7 @@
     /* Keeps 'Entertain Me' margin-top aligned properly at diff breakpoints */
         @media screen and (min-width: 320px) 
             {
-                .greetingContainer{
+                .greetingContainer {
                     margin-top: -2em;
                 } 
                 .homeGreeting {
@@ -69,6 +80,18 @@
                 }
                 .homeGreetingMsg {
                     font-size: 1em;
+                }
+                .alertUserMsg {
+                    width: 13em;
+                    text-align: center;
+                }
+            }
+        
+        @media screen and (min-width: 400px) 
+            { 
+                .alertUserMsg {
+                    width: 17.8em;
+                    text-align: center;
                 }
             }
 
@@ -79,6 +102,10 @@
                 }
                 .homeGreetingMsg {
                     font-size: 1.2em;
+                }
+                .alertUserMsg {
+                    width: 25em;
+                    text-align: center;
                 }
             }
         
@@ -92,6 +119,10 @@
                 }
                 .homeGreetingMsg {
                     font-size: 1.35em;
+                }
+                .alertUserMsg {
+                    width: 30em;
+                    text-align: center;
                 }
             }
 

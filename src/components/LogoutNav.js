@@ -12,18 +12,21 @@ const Navigation = (props) => {
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
                 <IndexLinkContainer to="/">
-                    <Navbar.Brand>Entertain Me</Navbar.Brand>
+                    <Navbar.Brand>EventRite!</Navbar.Brand>
                 </IndexLinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto"> {/* Moves links to right side of navbar */}
-                        <LinkContainer to="/user">
+                        <Navbar.Text>
+                            Hello, {localStorage.getItem('userName')}!
+                        </Navbar.Text>
+                        <LinkContainer to="/user" className="ms-3">
                             <Nav.Link>My Profile Page</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/interested">
+                        <LinkContainer to="/interested" className="ms-3">
                             <Nav.Link>'Interested' List</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/logout">
+                        <LinkContainer to="/logout" className="ms-3">
                             <Nav.Link onClick={_handleLogout}>Logout</Nav.Link>
                         </LinkContainer>
                     </Nav>
