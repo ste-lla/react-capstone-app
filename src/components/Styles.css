@@ -1,28 +1,54 @@
 
+/* MAIN BODY */
+
+    body {    
+        background: linear-gradient(0deg, rgba(104, 102, 103, 0.35), rgba(104, 102, 103, 0.35)), url('../images/pic1.jpeg') no-repeat center fixed;     
+        background-size: cover;
+    }
+
+
 /* HOME.JS */
 
-   /*  .homeMainContainer{
-        
-    } */
+    .greetingContainer {
+        background:rgba(104, 102, 103, 0.55);
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 0 auto;
+    }
 
     .homeGreeting {
-        display: flex;
-        justify-content: center; 
-        margin-top: 2.5em;
-        font-size: 4em;
-        
-        animation-name: rainbow;
-        animation-duration: 8s;   
+        font-weight: bold;
+        animation-name: changeColors;
+        animation-duration: 15s;   
         animation-iteration-count: infinite;
     }
 
-    @keyframes rainbow {
-        0% {color: red;}
-        25% {color: yellow;}
-        50% {color: orange;}
-        75% {color: blue;}
-        100% {color: green;}
-       }
+    @keyframes changeColors {
+        0% {color: whitesmoke;}
+        25% {color: rgb(226, 90, 183);}
+        50% {color: gold;}
+        75% {color: rgb(201, 159, 250);}
+        100% {color: whitesmoke;}
+    }
+
+    .homeGreetingMsg {
+        text-align: center;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+
+  /*   .border-gradient {
+        border: 10px solid;
+        border-image-slice: 1;
+        border-width: 2px;
+    } 
+    
+    .border-gradient-purple {
+        border-image-source: linear-gradient(122deg, rgba(148,17,137,1) 5%, rgba(31,147,125,1) 31%, rgba(10,110,237,1) 61%, rgba(240,205,11,1) 71%, rgba(31,147,125,0.9612219887955182) 80%, rgba(148,17,137,1) 97%);
+    } */
 
      
    
@@ -30,19 +56,54 @@
 
 
 
-       /* HOME.JS */
+/* HOME.JS - MEDIA QUERIES */
 
-       /* Keeps 'Entertain Me' margin-top aligned properly at diff breakpoints */
-            @media screen and (min-width: 360px) 
-                { 
-                    .homeGreeting {
-                        margin-top: 1em; 
-                    }
+    /* Keeps 'Entertain Me' margin-top aligned properly at diff breakpoints */
+        @media screen and (min-width: 320px) 
+            {
+                .greetingContainer{
+                    margin-top: -2em;
+                } 
+                .homeGreeting {
+                    font-size: 3em;
                 }
+                .homeGreetingMsg {
+                    font-size: 1em;
+                }
+            }
 
-                @media screen and (min-width: 768px) 
-                { 
-                    .homeGreeting {
-                        margin-top: 2.5em; 
-                    }
+        @media screen and (min-width: 576px) 
+            { 
+                .homeGreeting {
+                    font-size: 4.25em;
                 }
+                .homeGreetingMsg {
+                    font-size: 1.2em;
+                }
+            }
+        
+        @media screen and (min-width: 768px) 
+            { 
+                .greetingContainer{
+                    margin-top: 0.5em;
+                } 
+                .homeGreeting {
+                    font-size: 5.25em;
+                }
+                .homeGreetingMsg {
+                    font-size: 1.35em;
+                }
+            }
+
+            @media screen and (min-width: 1200px) 
+            { 
+                .greetingContainer{
+                    margin-top: 0em;
+                } 
+                .homeGreeting {
+                    font-size: 6.5em;
+                }
+                .homeGreetingMsg {
+                    font-size: 1.5em;
+                }
+            }

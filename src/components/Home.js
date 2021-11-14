@@ -15,7 +15,8 @@ const Home = () => {
     const [fieldRequired, setFieldRequired] = useState('');
     const [searchSuccess, setSearchSuccess] = useState('');
     const [loadingMsg, setLoadingMsg] = useState('');
-    const[greeting, setGreeting] = useState('Entertain Me!');
+    const[greeting, setGreeting] = useState('EventRite!');
+    const[greetingMsg, setGreetingMsg] = useState("Looking for adventure and entertainment? You're in the 'rite' place! Explore events happening across the U.S now.");
 
     let _handleSearchEvents = (e) => {
         if (e.target.date.value === "none" || e.target.distance.value === "none" || e.target.location.value === "" ) {
@@ -25,6 +26,7 @@ const Home = () => {
             setSearchSuccess('');
             setLoadingMsg('');
             setGreeting('');
+            setGreetingMsg('');
             setFieldRequired('Please complete all fields in the form before submitting.')
             
 
@@ -35,9 +37,10 @@ const Home = () => {
             setSearchSuccess('');
             setEventData([]);
             setGreeting('');
+            setGreetingMsg('');
             setLoadingMsg(<Spinner animation="border" variant="warning" />);
 
-            
+
             localStorage.setItem('lastLocationSearched', e.target.location.value )
             //let lastSearch = localStorage.getItem('lastLocationSearched');
             //console.log(lastSearch);
@@ -209,10 +212,11 @@ const Home = () => {
                 {fieldRequired}
             </Row>
 
-            <div id="myHomeGreeting" className="homeGreeting">{greeting}</div>  
-
-            {/* <Row className="d-flex justify-content-center align-items-center">Entertain Me!</Row> */}
-
+            <Col xs={10} className="greetingContainer border-gradient border-gradient-purple">
+                <div className="homeGreeting">{greeting}</div>
+                <div className="homeGreetingMsg">{greetingMsg}</div>  
+            </Col>  
+            
         </div>
     )
 }

@@ -6,7 +6,7 @@ const Navigation = () => {
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
                 <IndexLinkContainer to="/">
-                    <Navbar.Brand>Entertain Me!</Navbar.Brand>
+                    <Navbar.Brand>EventRite!</Navbar.Brand>
                 </IndexLinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
