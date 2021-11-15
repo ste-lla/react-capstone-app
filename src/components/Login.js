@@ -35,7 +35,7 @@ const Login = (props) => {
         history.push('/user'); 
     } else {
         setError(data.message);
-        console.log(setLoggedIn);
+        //console.log(setLoggedIn);
       }
     })
   }
@@ -67,7 +67,7 @@ const Login = (props) => {
             </Col>
 
             <Col xs={10} sm={8} lg={7}>
-              <div className="mb-1"><a href="/resetPassword" className="forgotPw">Forgot Password</a></div>
+              <div className="mb-1"><a href="/resetPassword" className="links">Forgot Password</a></div>
             </Col>
 
             <Col xs={10} sm={8} lg={7}>
@@ -76,7 +76,7 @@ const Login = (props) => {
           </Row>  
         </Form>
 
-        <p className="errorMsg">{error}</p>
+        <p className="errorMsg alertUserMsg my-0 mx-auto">{error}</p>
     </div>
   );
 }

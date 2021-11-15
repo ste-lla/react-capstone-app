@@ -17,11 +17,8 @@ const Navigation = (props) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto"> {/* Moves links to right side of navbar */}
-                        <Navbar.Text>
-                            Hello, {localStorage.getItem('userName')}!
-                        </Navbar.Text>
                         <LinkContainer to="/user" className="ms-3">
-                            <Nav.Link>My Profile Page</Nav.Link>
+                            <Nav.Link>User Page</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/interested" className="ms-3">
                             <Nav.Link>'Interested' List</Nav.Link>

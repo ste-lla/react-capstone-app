@@ -97,7 +97,7 @@ const Register = () => {
             </Row>
         </Form>
 
-        <p className="errorMsg">{registerError}</p>
+        <p className="errorMsg alertUserMsg my-0 mx-auto">{registerError}</p>
         
     </div>
   )

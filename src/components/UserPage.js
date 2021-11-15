@@ -74,7 +74,7 @@ const UserPage = () => {
                     //console.log(data);
                 })
                 .catch(err => {
-                    console.log(err);
+                    //console.log(err);
                     setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })
@@ -89,7 +89,7 @@ const UserPage = () => {
                     //console.log(data);
                 })
                 .catch(err => {
-                    console.log(err);
+                    //console.log(err);
                     setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })

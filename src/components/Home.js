@@ -78,7 +78,7 @@ const Home = () => {
                     //console.log(data);
                 })
                 .catch(err => {
-                    console.log(err);
+                    //console.log(err);
                     setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })
@@ -93,7 +93,7 @@ const Home = () => {
                     //console.log(data);
                 })
                 .catch(err => {
-                    console.log(err);
+                    //console.log(err);
                     setLoadingMsg('');
                     setError('You have entered an invalid City, State. Please try again')
                 })
@@ -162,7 +162,7 @@ const Home = () => {
 
   
     return(
-        <div className="homeMainContainer">
+        <div>
 
             <Form className="mx-4 d-flex justify-content-center" onSubmit={_handleSearchEvents}>
                 <Row>

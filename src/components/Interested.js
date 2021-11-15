@@ -23,7 +23,7 @@ const Interested = () => {
             }
 
             return(
-                <Col key={index}>
+                <Col key={index} className="d-flex justify-content-center">
                     <Card id="card" style={{ width: '18rem', marginTop: '2.5em' }}>
                         <Card.Img variant="top" src={savedEvent.img} />
                         <Card.Body>
@@ -49,7 +49,9 @@ const Interested = () => {
 
     return (
         <div>
-            <Row className="d-flex justify-content-center mt-4">My 'Interested in Attending' List</Row>
+            <Row className="alertUserMsg my-3 mx-auto">
+                <div>Events I'm Interested in Attending</div>
+            </Row>
             
             <Row>{displaySavedEvents}</Row>
 

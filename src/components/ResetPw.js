@@ -48,35 +48,38 @@ const ResetPw = () => {
     return (
       <div>
   
-          <Row xs={10} className="justify-content-center">Reset Password</Row>
+          <Row xs={10} className="justify-content-center mt-3 resetPwTitle">Reset Password</Row>
   
-          <Form onSubmit={_handleReset}>   
-            <Col xs={10} sm={6} md={4}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Enter the email address associated with your account</Form.Label>
-                    <Form.Control required type="email" name="email" placeholder="Enter Email" value={emailField} onChange={e => setEmailField(e.target.value)} />
-                </Form.Group>
-            </Col>
+          <Form className="m-3" onSubmit={_handleReset}>
+            <Row className="justify-content-center"> 
+              <Col xs={10} sm={8} lg={7}>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                      <Form.Label className="formLabels">Enter the email address associated with your account</Form.Label>
+                      <Form.Control required type="email" name="email" placeholder="Enter Email" value={emailField} onChange={e => setEmailField(e.target.value)} />
+                  </Form.Group>
+              </Col>
 
-            <Col xs={10} sm={6} md={4}>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>New Password</Form.Label>
-                    <Form.Control required type="password" name="password" placeholder="Enter Password" value={pwField} onChange={e => setPwField(e.target.value)} /> 
-                </Form.Group>
-            </Col>
+              <Col xs={10} sm={8} lg={7}>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label className="formLabels">New Password</Form.Label>
+                      <Form.Control required type="password" name="password" placeholder="Enter Password" value={pwField} onChange={e => setPwField(e.target.value)} /> 
+                  </Form.Group>
+              </Col>
 
-            <Col xs={10} sm={6} md={4}>
-                <Form.Group className="mb-3" controlId="formBasicPassword2">
-                    <Form.Label>Confirm New Password</Form.Label>
-                    <Form.Control required type="password" name="confirm_pw" placeholder="Re-enter Password" value={confirmPwField} onChange={e => setConfirmPwField(e.target.value)} />
-                </Form.Group>
-            </Col>
-        
-            <Button variant="primary" type="submit">Submit</Button>
-              
+              <Col xs={10} sm={8} lg={7}>
+                  <Form.Group className="mb-3" controlId="formBasicPassword2">
+                      <Form.Label className="formLabels">Confirm New Password</Form.Label>
+                      <Form.Control required type="password" name="confirm_pw" placeholder="Re-enter Password" value={confirmPwField} onChange={e => setConfirmPwField(e.target.value)} />
+                  </Form.Group>
+              </Col>
+
+              <Col xs={10} sm={8} lg={7}>
+                <Button variant="primary" type="submit">Submit</Button>
+              </Col>
+            </Row>
           </Form>
   
-          <p className="errorMsg">{resetError}</p>
+          <p className="errorMsg alertUserMsg my-0 mx-auto">{resetError}</p>
           
       </div>
     )
