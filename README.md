@@ -5,7 +5,7 @@
 EventRite is an application that allows users to search for current and future events by city. Events are of all types including music/concerts, sports, arts/theater and more. The user has the option to simply search for events on the Home page or upon registering an account, they may login and save events they are interested in. The user can then view their 'Interested' list and keep or delete events from this list at will. This application currently supports searches for cities within the U.S only.
 
 
-![Home Page](/screenshots/Homepg.png)
+![Home Page](/screenshots/HomePg.png)
 
 ![Searched Events](/screenshots/SearchEvents.png)
 
