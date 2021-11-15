@@ -61,10 +61,38 @@
         border-image-source: linear-gradient(122deg, rgba(148,17,137,1) 5%, rgba(31,147,125,1) 31%, rgba(10,110,237,1) 61%, rgba(240,205,11,1) 71%, rgba(31,147,125,0.9612219887955182) 80%, rgba(148,17,137,1) 97%);
     } */
 
-     
-   
-  
 
+
+/* LOGIN.JS & REGISTER.JS */
+
+    .forgotPw {
+        color: whitesmoke;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .forgotPw:hover {
+        color: cyan;
+    }
+
+    .loginRegTitle {
+        color: whitesmoke;
+        font-weight: bold;
+        /* font-size: 3em; */
+        text-decoration: underline;
+        letter-spacing: 0.33em;
+    }
+
+    .formLabels {
+        color: gold;
+        font-weight: bold;
+        /* font-size: 1.75em; */
+        background:rgba(104, 102, 103, 0.65);
+    }
+
+    .regTxtMuted {
+        color: white;
+    }
 
 
 /* HOME.JS - MEDIA QUERIES */
@@ -73,7 +101,7 @@
         @media screen and (min-width: 320px) 
             {
                 .greetingContainer {
-                    margin-top: -2em;
+                    margin-top: 0.5em;
                 } 
                 .homeGreeting {
                     font-size: 3em;
@@ -84,6 +112,15 @@
                 .alertUserMsg {
                     width: 13em;
                     text-align: center;
+                }
+                .registerBtn {
+                    margin-top: 1em;
+                }
+                .loginRegTitle {
+                    font-size: 1.85em;  
+                }
+                .formLabels {
+                    font-size: 1.3em;    
                 }
             }
         
@@ -97,6 +134,9 @@
 
         @media screen and (min-width: 576px) 
             { 
+                .greetingContainer {
+                    margin-top: 1.5em;
+                }
                 .homeGreeting {
                     font-size: 4.25em;
                 }
@@ -107,12 +147,15 @@
                     width: 25em;
                     text-align: center;
                 }
+                .loginRegTitle {
+                    font-size: 2.25em;  
+                }
             }
         
         @media screen and (min-width: 768px) 
             { 
                 .greetingContainer{
-                    margin-top: 0.5em;
+                    margin-top: 1.5em;
                 } 
                 .homeGreeting {
                     font-size: 5.25em;
@@ -124,17 +167,36 @@
                     width: 30em;
                     text-align: center;
                 }
+                .loginRegTitle {
+                    font-size: 2.75em;  
+                }
+                .formLabels {
+                    font-size: 1.45em;    
+                }
+            }
+
+        @media screen and (min-width: 996px) 
+            { 
+                .registerBtn {
+                    margin-top: 3.1em;
+                }
             }
 
             @media screen and (min-width: 1200px) 
             { 
                 .greetingContainer{
-                    margin-top: 0em;
+                    margin-top: 2.5em;
                 } 
                 .homeGreeting {
                     font-size: 6.5em;
                 }
                 .homeGreetingMsg {
                     font-size: 1.5em;
+                }
+                .loginRegTitle {
+                    font-size: 3em;  
+                }
+                .formLabels {
+                    font-size: 1.75em;    
                 }
             }

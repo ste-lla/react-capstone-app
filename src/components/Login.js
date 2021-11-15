@@ -48,27 +48,32 @@ const Login = (props) => {
   return (
     <div>
 
-        <Row className="justify-content-center">Login</Row>
+        <Row className="justify-content-center mt-3 loginRegTitle">Login</Row>
 
-        <Form onSubmit={_handleLogin}>
-            <Col xs={10} sm={6} md={4}>
+        <Form className="m-3" onSubmit={_handleLogin}>
+          <Row className="justify-content-center">
+            <Col xs={10} sm={8} lg={7}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label className="formLabels">Email address</Form.Label>
                     <Form.Control required type="email" name="email" placeholder="Enter Email" />
                 </Form.Group>
             </Col>
-
-            <Col xs={10} sm={6} md={4}>
+       
+            <Col xs={10} sm={8} lg={7}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="formLabels">Password</Form.Label>
                     <Form.Control required type="password" name="password" placeholder="Enter Password" />
                 </Form.Group>
             </Col>
 
-            <div className="mb-3"><a href="/resetPassword">Forgot Password</a></div>
+            <Col xs={10} sm={8} lg={7}>
+              <div className="mb-1"><a href="/resetPassword" className="forgotPw">Forgot Password</a></div>
+            </Col>
 
-
-            <Button variant="primary" type="submit">Login</Button>
+            <Col xs={10} sm={8} lg={7}>
+              <Button className="mt-3" variant="primary" type="submit">Submit</Button>
+            </Col> 
+          </Row>  
         </Form>
 
         <p className="errorMsg">{error}</p>
