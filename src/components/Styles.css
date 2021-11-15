@@ -21,6 +21,7 @@
 
     .homeGreeting {
         font-weight: bold;
+        letter-spacing: 0.05em;
         animation-name: changeColors;
         animation-duration: 15s;   
         animation-iteration-count: infinite;
@@ -49,7 +50,7 @@
         padding-right: 0.5em;
     }
 
- /*    .border-gradient {
+   /*  .border-gradient {
         border: 10px solid;
         border-image-slice: 1;
         border-width: 2px;
@@ -122,7 +123,7 @@
                     margin-top: 0.5em;
                 } 
                 .homeGreeting {
-                    font-size: 3em;
+                    font-size: 2.75em;
                 }
                 .homeGreetingMsg {
                     font-size: 1em;
