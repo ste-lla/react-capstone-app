@@ -19,6 +19,7 @@ EventRite is an application that allows users to search for current and future e
 - Node.js
 - Express.js 
 - Sequelize
+- Ticketmaster (Discovery) API
 
 
 ## Usage
