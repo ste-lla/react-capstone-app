@@ -50,6 +50,10 @@ find an area for improvement or something that can be added and contribute your 
 2. Make your desired changes and test them
 3. Submit a Pull Request with a description of the changes made
 
+## License
+
+[MIT](/LICENSE)
+
 
 
 
