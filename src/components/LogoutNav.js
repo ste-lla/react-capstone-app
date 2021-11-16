@@ -18,7 +18,7 @@ const Navigation = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto"> {/* Moves links to right side of navbar */}
                         <LinkContainer to="/user" className="ms-3">
-                            <Nav.Link>User Page</Nav.Link>
+                            <Nav.Link>Profile</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/interested" className="ms-3">
                             <Nav.Link>'Interested' List</Nav.Link>

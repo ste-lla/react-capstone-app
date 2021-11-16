@@ -16,7 +16,7 @@ const Login = (props) => {
     
     //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/login
     //Production: http://localhost:3001/api/login
-    fetch('http://localhost:3001/api/login', {
+    fetch('https://express-capstone-app.herokuapp.com/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

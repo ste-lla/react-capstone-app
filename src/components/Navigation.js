@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 
+
 const Navigation = () => {
     return(
         <Navbar bg="dark" expand="lg" variant="dark" collapseOnSelect>
@@ -15,7 +16,7 @@ const Navigation = () => {
                             <Nav.Link>Login</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/register">
-                            <Nav.Link>Register</Nav.Link>
+                            <Nav.Link>Sign Up</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>

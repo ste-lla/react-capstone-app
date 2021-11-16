@@ -15,7 +15,7 @@ const Register = () => {
 
     //The Heroku URL to Use: https://express-capstone-app.herokuapp.com/api/register
     //Production: http://localhost:3001/api/register
-    fetch('http://localhost:3001/api/register', {
+    fetch('https://express-capstone-app.herokuapp.com/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

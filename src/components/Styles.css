@@ -11,7 +11,14 @@
         font-family: 'Nunito', sans-serif;
     }
 
-   
+
+
+/* Navbar */
+
+    .navbar-dark .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
 
 
 /* HOME.JS & SHARED STYLING */
@@ -57,6 +64,10 @@
         color: white;
         padding-left: 0.5em;
         padding-right: 0.5em;
+    }
+
+    .btn .btn-primary {
+        font-weight: 600;
     }
 
    /*  .border-gradient {
