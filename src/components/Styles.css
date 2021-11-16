@@ -66,8 +66,9 @@
         padding-right: 0.5em;
     }
 
-    .btn .btn-primary {
-        font-weight: 600;
+    .navbar-dark .navbar-nav .nav-link {
+        font-weight: 700;
+        color: whitesmoke !important;
     }
 
    /*  .border-gradient {

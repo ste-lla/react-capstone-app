@@ -16,7 +16,7 @@ const Navigation = () => {
                             <Nav.Link>Login</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/register">
-                            <Nav.Link>Sign Up</Nav.Link>
+                            <Nav.Link className="ms-3">Sign Up</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
