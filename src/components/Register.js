@@ -42,7 +42,7 @@ const Register = () => {
   return (
     <div>
 
-        <Row xs={10} className="justify-content-center mt-3 loginRegTitle">Registration</Row>
+        <Row xs={10} className="justify-content-center mt-3 loginRegTitle">Sign Up</Row>
 
         <Form className="m-3" onSubmit={_handleRegister}>
             <Row className="justify-content-center">
@@ -92,7 +92,7 @@ const Register = () => {
               </Col> */}
               
               <Col xs={10} sm={8} lg={5}>
-                <Button className="registerBtn" variant="primary" type="submit">Register!</Button>
+                <Button className="registerBtn" variant="primary" type="submit">Sign Up!</Button>
               </Col>
             </Row>
         </Form>
