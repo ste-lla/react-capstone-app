@@ -2,15 +2,22 @@
 /* MAIN BODY */
 
     body {    
-        background: linear-gradient(0deg, rgba(104, 102, 103, 0.35), rgba(104, 102, 103, 0.35)), url('../images/pic1.jpeg') no-repeat center fixed;     
+        background: linear-gradient(0deg, rgba(104, 102, 103, 0.5), rgba(104, 102, 103, 0.5)), url('../images/pic1.jpeg') no-repeat center fixed;     
         background-size: cover;
+        
     }
+
+    #root {
+        font-family: 'Nunito', sans-serif;
+    }
+
+   
 
 
 /* HOME.JS & SHARED STYLING */
 
     .greetingContainer {
-        background:rgba(104, 102, 103, 0.55);
+        background:rgba(104, 102, 103, 0.65);
         padding: 1.5em;
         display: flex;
         flex-direction: column;
@@ -22,9 +29,11 @@
     .homeGreeting {
         font-weight: bold;
         letter-spacing: 0.05em;
-        animation-name: changeColors;
+        color: whitesmoke;
+        font-family: 'Kaushan Script', cursive;
+        /* animation-name: changeColors;
         animation-duration: 15s;   
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite; */
     }
 
     @keyframes changeColors {
@@ -42,7 +51,7 @@
     }
 
     .alertUserMsg {
-        background:rgba(104, 102, 103, 0.55);
+        background:rgba(104, 102, 103, 0.75);
         font-size: 1.4em;
         font-weight: bold;
         color: white;
@@ -59,6 +68,18 @@
     .border-gradient-purple {
         border-image-source: linear-gradient(122deg, rgba(148,17,137,1) 5%, rgba(31,147,125,1) 31%, rgba(10,110,237,1) 61%, rgba(240,205,11,1) 71%, rgba(31,147,125,0.9612219887955182) 80%, rgba(148,17,137,1) 97%);
     } */
+
+
+
+/* USER.JS */
+
+    .userGreeting {
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        animation-name: changeColors;
+        animation-duration: 15s;   
+        animation-iteration-count: infinite; 
+    }
 
 
 
@@ -82,9 +103,10 @@
     }
 
     .formLabels {
-        color: gold;
-        font-weight: bold;
-        background:rgba(104, 102, 103, 0.65);
+        /* color: gold; */
+        color: whitesmoke;
+        font-weight: 500;
+        background:rgba(104, 102, 103, 0.85);
     }
 
     .regTxtMuted {
@@ -125,6 +147,10 @@
                 .homeGreeting {
                     font-size: 2.75em;
                 }
+                .userGreeting {
+                    font-size: 1.5em; 
+                 }
+                
                 .homeGreetingMsg {
                     font-size: 1em;
                 }
@@ -139,7 +165,7 @@
                     font-size: 1.85em;  
                 }
                 .formLabels {
-                    font-size: 1.3em;    
+                    font-size: 1em;    
                 }
                 .resetPwTitle {
                     font-size: 1.85em;
@@ -169,6 +195,9 @@
                 .homeGreeting {
                     font-size: 4.25em;
                 }
+                .userGreeting {
+                    font-size: 2em; 
+                 }
                 .homeGreetingMsg {
                     font-size: 1.2em;
                 }
@@ -195,6 +224,9 @@
                 .homeGreeting {
                     font-size: 5.25em;
                 }
+                .userGreeting {
+                    font-size: 2.5em; 
+                 }
                 .homeGreetingMsg {
                     font-size: 1.35em;
                 }
@@ -206,7 +238,7 @@
                     font-size: 2.75em;  
                 }
                 .formLabels {
-                    font-size: 1.45em;    
+                    font-size: 1.25em;    
                 }
                 .resetPwTitle {
                     font-size: 2.75em;
@@ -231,6 +263,9 @@
                 .homeGreeting {
                     font-size: 6.5em;
                 }
+                .userGreeting {
+                   font-size: 3em; 
+                }
                 .homeGreetingMsg {
                     font-size: 1.5em;
                 }
@@ -238,7 +273,7 @@
                     font-size: 3em;  
                 }
                 .formLabels {
-                    font-size: 1.75em;    
+                    font-size: 1.5em;    
                 }
                 .resetPwTitle {
                     font-size: 3em;

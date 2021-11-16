@@ -9,7 +9,7 @@ const Navigation = (props) => {
     } 
 
     return(
-        <Navbar bg="dark" expand="lg" variant="dark">
+        <Navbar bg="dark" expand="lg" variant="dark" collapseOnSelect>
             <Container>
                 <IndexLinkContainer to="/">
                     <Navbar.Brand>EventRite!</Navbar.Brand>

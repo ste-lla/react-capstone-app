@@ -175,8 +175,8 @@ const UserPage = () => {
                             <br/>
                         <Card.Link href="#top">Back to Top of Page</Card.Link>
                             <br/>
-                    <Button onClick={_AddToInterested} className="mt-3" variant="primary">Save!</Button> 
-                    <div className="savedMsg mt-3"></div>
+                        <Button onClick={_AddToInterested} className="mt-3" variant="primary">Save!</Button> 
+                        <div className="savedMsg mt-3"></div>
                     </Card.Body>   
                 </Card>
             </Col>
@@ -239,7 +239,7 @@ const UserPage = () => {
             </Row>
 
             <Col xs={10} className="greetingContainer border-gradient border-gradient-purple">
-                <div className="homeGreeting">{greeting}</div>
+                <div className="userGreeting">{greeting}</div>
             </Col> 
 
         </div>
